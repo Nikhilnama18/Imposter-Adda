@@ -1,0 +1,20 @@
+import "./globals.css";
+
+export const metadata = {
+  title: "Imposter Who - Indian Edition",
+  description: "A fun party game to find the imposter!",
+  themeColor: "#0f172a",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+      </head>
+      <body>
+        {children}
+      </body>
+    </html>
+  );
+}
