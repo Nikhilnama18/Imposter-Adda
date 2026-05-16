@@ -1,12 +1,21 @@
 "use client";
 import { useState, useEffect, useRef } from 'react';
 
-export default function GamePlay({ currentPlayerName, isImposter, secretWord, imposterHint, onNextPlayer, isLastPlayer }) {
+interface GamePlayProps {
+  currentPlayerName: string;
+  isImposter: boolean;
+  secretWord: string;
+  imposterHint: string;
+  onNextPlayer: () => void;
+  isLastPlayer: boolean;
+}
+
+export default function GamePlay({ currentPlayerName, isImposter, secretWord, imposterHint, onNextPlayer, isLastPlayer }: GamePlayProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [hasViewed, setHasViewed] = useState(false);
   const [timeLeft, setTimeLeft] = useState(5);
-  const timeoutRef = useRef(null);
-  const intervalRef = useRef(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Reset state when player changes
@@ -30,7 +39,7 @@ export default function GamePlay({ currentPlayerName, isImposter, secretWord, im
     intervalRef.current = setInterval(() => {
       setTimeLeft((prev) => {
         if (prev <= 1) {
-          clearInterval(intervalRef.current);
+          if (intervalRef.current) clearInterval(intervalRef.current);
           return 0;
         }
         return prev - 1;
@@ -39,7 +48,7 @@ export default function GamePlay({ currentPlayerName, isImposter, secretWord, im
 
     timeoutRef.current = setTimeout(() => {
       setIsFlipped(false);
-      clearInterval(intervalRef.current);
+      if (intervalRef.current) clearInterval(intervalRef.current);
     }, 5000);
   };
 

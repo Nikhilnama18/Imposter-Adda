@@ -7,16 +7,24 @@ import PlayerSetup from '@/components/PlayerSetup';
 import TopicSelection from '@/components/TopicSelection';
 import GamePlay from '@/components/GamePlay';
 import GameResult from '@/components/GameResult';
-import { topicsData } from '@/data/topics';
+import { topicsData, TopicWord } from '@/data/topics';
+
+interface GameData {
+  currentPlayerIndex: number;
+  imposterIndex: number;
+  secretWord: string;
+  imposterHint: string;
+  randomStartPlayer: string;
+}
 
 export default function Home() {
-  const [gameState, setGameState] = useState('setup'); // setup, playing, result
-  const [players, setPlayers] = useState(['Player 1', 'Player 2']);
+  const [gameState, setGameState] = useState<'setup' | 'playing' | 'result'>('setup');
+  const [players, setPlayers] = useState<string[]>(['Player 1', 'Player 2']);
   
   const availableTopics = Object.keys(topicsData);
-  const [selectedTopics, setSelectedTopics] = useState([availableTopics[0], availableTopics[1]]);
+  const [selectedTopics, setSelectedTopics] = useState<string[]>([availableTopics[0], availableTopics[1]]);
   
-  const [gameData, setGameData] = useState({
+  const [gameData, setGameData] = useState<GameData>({
     currentPlayerIndex: 0,
     imposterIndex: 0,
     secretWord: '',
@@ -26,7 +34,7 @@ export default function Home() {
 
   const startGame = () => {
     // 1. Gather all words from selected topics
-    let allWords = [];
+    let allWords: TopicWord[] = [];
     selectedTopics.forEach(topic => {
       allWords = [...allWords, ...topicsData[topic]];
     });

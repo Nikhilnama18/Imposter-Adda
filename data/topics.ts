@@ -1,4 +1,11 @@
-export const topicsData = {
+export type TopicWord = {
+  word: string;
+  hints: string[];
+};
+
+export type TopicsData = Record<string, TopicWord[]>;
+
+export const topicsData: TopicsData = {
   "Bollywood Movies": [
     { word: "Sholay", hints: ["Classic action film", "Famous villain named Gabbar", "Coin toss friendship"] },
     { word: "3 Idiots", hints: ["Engineering college story", "All is well", "Rancho, Raju, Farhan"] },
