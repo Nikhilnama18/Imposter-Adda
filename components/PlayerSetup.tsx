@@ -1,13 +1,18 @@
 "use client";
 
-export default function PlayerSetup({ players, setPlayers }) {
+interface PlayerSetupProps {
+  players: string[];
+  setPlayers: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+export default function PlayerSetup({ players, setPlayers }: PlayerSetupProps) {
   const addPlayer = () => {
     if (players.length < 10) {
       setPlayers([...players, `Player ${players.length + 1}`]);
     }
   };
 
-  const removePlayer = (index) => {
+  const removePlayer = (index: number) => {
     if (players.length > 2) {
       const newPlayers = [...players];
       newPlayers.splice(index, 1);
@@ -15,7 +20,7 @@ export default function PlayerSetup({ players, setPlayers }) {
     }
   };
 
-  const updatePlayerName = (index, newName) => {
+  const updatePlayerName = (index: number, newName: string) => {
     const newPlayers = [...players];
     newPlayers[index] = newName;
     setPlayers(newPlayers);

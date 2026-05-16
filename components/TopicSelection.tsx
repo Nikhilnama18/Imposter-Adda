@@ -1,9 +1,16 @@
 "use client";
 
-export default function TopicSelection({ availableTopics, selectedTopics, setSelectedTopics, onStartGame }) {
-  const toggleTopic = (topic) => {
+interface TopicSelectionProps {
+  availableTopics: string[];
+  selectedTopics: string[];
+  setSelectedTopics: React.Dispatch<React.SetStateAction<string[]>>;
+  onStartGame: () => void;
+}
+
+export default function TopicSelection({ availableTopics, selectedTopics, setSelectedTopics, onStartGame }: TopicSelectionProps) {
+  const toggleTopic = (topic: string) => {
     if (selectedTopics.includes(topic)) {
-      setSelectedTopics(selectedTopics.filter(t => t !== topic));
+      setSelectedTopics(selectedTopics.filter((t: string) => t !== topic));
     } else {
       setSelectedTopics([...selectedTopics, topic]);
     }

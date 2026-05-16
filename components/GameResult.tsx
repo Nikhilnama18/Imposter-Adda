@@ -1,7 +1,13 @@
 "use client";
 import { useState } from 'react';
 
-export default function GameResult({ randomStartPlayer, imposterName, onPlayAgain }) {
+interface GameResultProps {
+  randomStartPlayer: string;
+  imposterName: string;
+  onPlayAgain: () => void;
+}
+
+export default function GameResult({ randomStartPlayer, imposterName, onPlayAgain }: GameResultProps) {
   const [isImposterRevealed, setIsImposterRevealed] = useState(false);
 
   return (
