@@ -19,10 +19,10 @@ interface GameData {
 
 export default function Home() {
   const [gameState, setGameState] = useState<'setup' | 'playing' | 'result'>('setup');
-  const [players, setPlayers] = useState<string[]>(['Player 1', 'Player 2']);
+  const [players, setPlayers] = useState<string[]>(['Player 1', 'Player 2', 'Player 3']);
   
   const availableTopics = Object.keys(topicsData);
-  const [selectedTopics, setSelectedTopics] = useState<string[]>([availableTopics[0], availableTopics[1]]);
+  const [selectedTopics, setSelectedTopics] = useState<string[]>([availableTopics[0]]);
   
   const [gameData, setGameData] = useState<GameData>({
     currentPlayerIndex: 0,

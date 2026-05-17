@@ -16,12 +16,12 @@ export default function TopicSelection({ availableTopics, selectedTopics, setSel
     }
   };
 
-  const isStartDisabled = selectedTopics.length < 3;
+  const isStartDisabled = selectedTopics.length === 0;
 
   return (
     <div className="topic-selection glass-panel">
       <h2 className="section-title">Select Topics</h2>
-      <p className="subtitle">Choose at least 3 topics ({selectedTopics.length} selected)</p>
+      <p className="subtitle">Choose at least 1 topic ({selectedTopics.length} selected)</p>
 
       <div className="topics-grid">
         {availableTopics.map((topic, index) => {

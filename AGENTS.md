@@ -1,9 +1,9 @@
-# Imposter Who - Agent Guidelines
+# Imposter Adda - Agent Guidelines
 
 Welcome, AI Agent! If you are working on this project, please follow these guidelines and consult the architecture documentation before making changes.
 
 ## Project Overview
-"Imposter Who - Indian Edition" is a mobile-first, Next.js Single Page Application (SPA). It is a party game where players pass a single device to view a secret word, with one player acting as the Imposter who only receives a vague hint. 
+"Imposter Adda - Indian Edition" is a mobile-first, Next.js Single Page Application (SPA). It is a party game where players pass a single device to view a secret word, with one player acting as the Imposter who only receives a vague hint. 
 
 ## Key Directories & Files
 - **`app/page.js`**: Central state management for the entire application (`gameState`: setup -> playing -> result).
