@@ -64,14 +64,14 @@ export default function GamePlay({ currentPlayerName, isImposter, secretWord, im
 
       <div className="card-container" onClick={handleCardClick}>
         <div className={`flip-card ${isFlipped ? 'flipped' : ''}`}>
-          
+
           <div className="flip-card-front glass-panel">
             <div className="card-pattern">
               <span>?</span>
             </div>
             <p className="tap-text">{hasViewed ? "Already viewed" : "Tap to reveal"}</p>
           </div>
-          
+
           <div className={`flip-card-back glass-panel ${isImposter ? 'imposter-bg' : 'citizen-bg'}`}>
             <span className="card-label">{labelToShow}</span>
             <h3 className="card-word">{textToShow}</h3>
@@ -85,7 +85,7 @@ export default function GamePlay({ currentPlayerName, isImposter, secretWord, im
       <div className="action-container" style={{ marginTop: '1rem', minHeight: '60px' }}>
         {hasViewed && !isFlipped && (
           <button className="btn-primary next-btn animate-fade-in" onClick={onNextPlayer}>
-            {isLastPlayer ? 'Finish Viewing' : 'Next Player'}
+            {isLastPlayer ? 'Start Discussion' : 'Next Player'}
           </button>
         )}
       </div>
