@@ -33,7 +33,7 @@ export default function TopicSelection({ availableTopics, selectedTopics, setSel
               onClick={() => toggleTopic(topic)}
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              {topic}
+              {topic.replace(' ', '\n')}
             </button>
           );
         })}
@@ -86,6 +86,7 @@ export default function TopicSelection({ availableTopics, selectedTopics, setSel
           transition: all 0.2s ease;
           animation: fadeIn 0.4s ease-out forwards;
           opacity: 0;
+          white-space: pre-line;
         }
 
         .topic-btn:hover {

@@ -33,7 +33,7 @@ export default function GameHeader() {
                 <li><strong>Gather the Gang:</strong> Add your friends (3-10 players) and pick a topic to get started.</li>
                 <li><strong>Pass the Phone:</strong> Hand the device around so each player can secretly view their card.</li>
                 <li><strong>The Twist:</strong> Most of you will see the exact same secret word, but one player is the Imposter and only gets a hint!</li>
-                <li><strong>Drop a Clue:</strong> Once everyone has seen their card, take turns saying just <i>one word / sentence</i> related to the secret to prove you aren't the fake.</li>
+                <li><strong>Drop a Clue:</strong> Once everyone has seen their card, take turns saying just <i>one word or sentence</i> related to the secret to prove you aren't the fake.</li>
                 <li><strong>Catch the Imposter:</strong> Discuss the clues and vote out the fake! Meanwhile, the Imposter must try to blend in and figure out the real word.</li>
               </ol>
             </div>
