@@ -1,4 +1,5 @@
 import "./globals.css";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const viewport = {
   themeColor: "#0f172a",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
