@@ -13,7 +13,7 @@ export default function PlayerSetup({ players, setPlayers }: PlayerSetupProps) {
   };
 
   const removePlayer = (index: number) => {
-    if (players.length > 2) {
+    if (players.length > 3) {
       const newPlayers = [...players];
       newPlayers.splice(index, 1);
       setPlayers(newPlayers);
@@ -41,7 +41,7 @@ export default function PlayerSetup({ players, setPlayers }: PlayerSetupProps) {
               placeholder={`Player ${index + 1}`}
               className="player-input"
             />
-            {players.length > 2 && (
+            {players.length > 3 && (
               <button 
                 onClick={() => removePlayer(index)}
                 className="remove-btn"

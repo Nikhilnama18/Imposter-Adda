@@ -1,4 +1,4 @@
-# Imposter Who - Architecture
+# Imposter Adda - Architecture
 
 ## Core Flow
 - **Party Game Style**: Designed for mobile pass-and-play.

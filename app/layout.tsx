@@ -1,12 +1,15 @@
 import "./globals.css";
 
-export const metadata = {
-  title: "Imposter Who - Indian Edition",
-  description: "A fun party game to find the imposter!",
+export const viewport = {
   themeColor: "#0f172a",
 };
 
-export default function RootLayout({ children }) {
+export const metadata = {
+  title: "Imposter Adda - Indian Edition",
+  description: "A fun party game to find the imposter!",
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>

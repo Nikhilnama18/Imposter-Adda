@@ -9,9 +9,9 @@ export default function GameHeader() {
       <header className="header">
         <div className="logo-container">
           <h1 className="title">
-            <span className="text-saffron">Imposter</span> Who
+            <span className="text-saffron">Imposter</span> Adda
           </h1>
-          <p className="subtitle">Indian Edition 🇮🇳</p>
+          <p className="subtitle">Find the fake one in your gang.</p>
         </div>
         <button
           className="btn-secondary how-to-play-btn"
@@ -30,13 +30,11 @@ export default function GameHeader() {
             </div>
             <div className="modal-body">
               <ol>
-                <li><strong>Setup:</strong> Enter player names (2-10 players) and select at least 3 topics.</li>
-                <li><strong>The Secret:</strong> All players except one (Imposter) will see the same secret word.</li>
-                <li><strong>The Imposter:</strong> The Imposter will see a hint related to the secret word instead.</li>
-                <li><strong>Viewing Phase:</strong> Pass the device around. Each player clicks to view their card secretly, then clicks "Next Player".</li>
-                <li><strong>Discussion Phase:</strong> Once everyone has viewed their card, the game tells you who starts. Players may choose to speak a single clue word or talk around the secret word without giving it away.</li>
-                <li><strong>The Goal:</strong> Regular players try to figure out who the Imposter is without giving away the secret word. The Imposter tries to blend in and guess what the word might be based on others' clues!</li>
-                <li><strong>Voting:</strong> Vote on who the Imposter is. Finally, click "Reveal Imposter" to see who it was!</li>
+                <li><strong>Gather the Gang:</strong> Add your friends (3-10 players) and pick a topic to get started.</li>
+                <li><strong>Pass the Phone:</strong> Hand the device around so each player can secretly view their card.</li>
+                <li><strong>The Twist:</strong> Most of you will see the exact same secret word, but one player is the Imposter and only gets a hint!</li>
+                <li><strong>Drop a Clue:</strong> Once everyone has seen their card, take turns saying just <i>one word / sentence</i> related to the secret to prove you aren't the fake.</li>
+                <li><strong>Catch the Imposter:</strong> Discuss the clues and vote out the fake! Meanwhile, the Imposter must try to blend in and figure out the real word.</li>
               </ol>
             </div>
           </div>
@@ -72,8 +70,8 @@ export default function GameHeader() {
           font-size: 0.9rem;
           color: var(--accent-green);
           font-weight: 500;
-          letter-spacing: 1px;
-          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          font-style: italic;
         }
 
         .how-to-play-btn {
@@ -144,7 +142,7 @@ export default function GameHeader() {
         }
 
         .modal-body strong {
-          color: white;
+          color: var(--accent-green);
         }
       `}</style>
     </>
